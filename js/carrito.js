@@ -21,6 +21,5 @@ let btnEliminarTodo = document.getElementById("btnEliminarTodo");
 btnEliminarTodo.addEventListener("click", () => {
     localStorage.clear();
     sessionStorage.clear();
-    // window.location.reload();
     pagCarrito.innerHTML = "Deberás recargar (F5) la página principal";  
  });

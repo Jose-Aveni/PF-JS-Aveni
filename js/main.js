@@ -42,3 +42,29 @@ botones.forEach((boton) => {
         localStorage.setItem("arrayStorageUp", aJson);
     });
 });
+
+// const ing = document.getElementById('divIngrediente');
+// fetch('../json/ingredientes.json')
+//   .then((response) => response.json())
+//   .then((data) => {
+//       data.forEach((ingrediente) => {
+//           const p = document.createElement('p');
+//           p.innerHTML = 
+//           `<p>${productos.ingredientes}</p>`
+//           ing.appendChild(p)
+//           })
+// })
+ 
+const ing = document.getElementById('divIngrediente');
+fetch('../json/ingredientes.json')
+  .then((response) => response.json())
+  .then((data) => {
+    data.productos.forEach((producto) => {
+      const p = document.createElement('div');
+      p.textContent = producto.ingredientes;
+      ing.appendChild(p);
+    });
+  })
+  .catch((error) => {
+    console.log('Error al obtener los datos:', error);
+  });
